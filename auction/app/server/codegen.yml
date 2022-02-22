@@ -1,0 +1,15 @@
+overwrite: true
+config:
+    addDocBlocks: false
+    apolloClientVersion: 3
+    reactApolloVersion: 3
+    typesPrefix: GQL
+schema: "../schema/*.graphql"
+generates:
+    ./src/graphql/index.ts:
+        config:
+            useIndexSignature: true
+        plugins:
+            - "typescript"
+            - "typescript-resolvers"
+            - plugins/typeDefs.js

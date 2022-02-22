@@ -1,0 +1,10 @@
+collab/images/raw/*
+collab/images/dist/*
+collab/metadata/*
+
+solo/images/raw/*
+solo/images/dist/*
+solo/metadata/*
+
+artists.js
+premint.js

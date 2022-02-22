@@ -1,0 +1,5 @@
+query Painting($input: PaintingInput!) {
+	painting(input: $input) {
+		...expandedPainting
+	}
+}

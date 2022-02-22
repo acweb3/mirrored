@@ -1,0 +1,46 @@
+scalar Time
+
+enum Direction {
+	FORWARD
+	BACKWARD
+}
+
+type PageInfo {
+	hasNextPage: Boolean!
+	hasPreviousPage: Boolean!
+	startCursor: String
+	endCursor: String
+}
+
+input PageArguments {
+	first: Int
+	after: ID
+	last: Int
+	before: ID
+}
+
+interface Connection {
+	edges: [Edge!]
+	pageInfo: PageInfo!
+}
+
+interface Edge {
+	node: Node!
+	cursor: ID!
+}
+
+interface Node {
+	id: ID!
+}
+
+type Query {
+	nodeQuery: Node!
+}
+
+type Mutation {
+	nodeMutation: Node!
+}
+
+type Subscription {
+	nodeSubscription: Node!
+}

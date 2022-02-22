@@ -1,0 +1,28 @@
+config:
+    addDocBlocks: false
+    apolloClientVersion: 3
+    reactApolloVersion: 3
+    typesPrefix: GQL
+    withHooks: true
+    withMutationFn: false
+    withMutationOptionsType: true
+    withResultType: true
+schema: ../schema/*.graphql
+documents:
+    - "src/graphql/fragments/**/*.graphql"
+    - "src/graphql/mutations/**/*.graphql"
+    - "src/graphql/queries/**/*.graphql"
+    - "src/graphql/queries/**/**/*.graphql"
+    - "src/graphql/subscriptions/**/*.graphql"
+generates:
+    src/graphql/index.ts:
+        plugins:
+            - typescript
+            - typescript-operations
+            - typescript-react-apollo
+    src/graphql/introspection.ts:
+        plugins:
+            - fragment-matcher
+    src/graphql/typePolicies.ts:
+        plugins:
+            - typescript-apollo-client-helpers

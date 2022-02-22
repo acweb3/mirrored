@@ -1,0 +1,11 @@
+fragment user on User {
+	id
+	address
+	nonce
+}
+
+fragment authUser on AuthUser {
+	id
+	address
+	token
+}

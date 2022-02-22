@@ -1,0 +1,9 @@
+query Paintings($input: PaintingsInput!) {
+	paintings(input: $input) {
+		edges {
+			node {
+				...basicPainting
+			}
+		}
+	}
+}

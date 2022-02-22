@@ -1,0 +1,5 @@
+query ValidateWallet($input: ValidateWalletInput!) {
+	validateWallet(input: $input) {
+		...authUser
+	}
+}

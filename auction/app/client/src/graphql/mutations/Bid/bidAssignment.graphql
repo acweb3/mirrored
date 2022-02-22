@@ -1,0 +1,6 @@
+mutation BidAssignment($input: BidAssignmentInput!) {
+	bidAssignment(input: $input) {
+		id
+		amount
+	}
+}

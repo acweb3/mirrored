@@ -1,0 +1,26 @@
+fragment basicPainting on Painting {
+	id
+	name
+	description
+	tokenID
+	start
+	topBid {
+		ownerAddress
+		amount
+	}
+}
+
+fragment expandedPainting on Painting {
+	id
+	name
+	description
+	tokenID
+	start
+	topBid {
+		amount
+		ownerAddress
+	}
+	bids {
+		...paintingBid
+	}
+}

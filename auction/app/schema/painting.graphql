@@ -1,0 +1,57 @@
+enum PaintingsOrderBy {
+	NATURAL
+	CREATED_ASC
+	CREATED_DESC
+	UPDATED_ASC
+	UPDATED_DESC
+	ALPHABETIC_ASC
+	ALPHABETIC_DESC
+}
+
+type TopBid {
+	amount: Float!
+	ownerAddress: String!
+}
+
+type Painting implements Node {
+	id: ID!
+	name: String!
+	description: String!
+	tokenID: Int!
+	topBid: TopBid
+	start: Time
+	bids: [Bid]
+}
+
+type PaintingEdge implements Edge {
+	cursor: ID!
+	node: Painting!
+}
+
+type Paintings implements Connection {
+	edges: [PaintingEdge!]
+	pageInfo: PageInfo!
+}
+
+input PaintingCondition {
+	id: ID!
+}
+
+input PaintingInput {
+	condition: PaintingCondition
+}
+
+input PaintingsCondition {
+	hasBids: Boolean
+}
+
+input PaintingsInput {
+	arguments: PageArguments
+	orderBy: PaintingsOrderBy
+	condition: PaintingsCondition
+}
+
+extend type Query {
+	painting(input: PaintingInput): Painting
+	paintings(input: PaintingsInput): Paintings
+}

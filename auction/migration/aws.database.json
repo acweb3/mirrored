@@ -1,0 +1,10 @@
+{
+	"dev": {
+		"database": "",
+		"driver": "",
+		"user": "",
+		"password": "",
+		"host": "",
+		"port": ""
+	}
+}

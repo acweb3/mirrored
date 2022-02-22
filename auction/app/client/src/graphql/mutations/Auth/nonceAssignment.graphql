@@ -1,0 +1,5 @@
+mutation NonceAssignment($input: NonceAssignmentInput!) {
+	nonceAssignment(input: $input) {
+		...user
+	}
+}

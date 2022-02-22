@@ -1,0 +1,33 @@
+type User implements Node {
+	id: ID!
+	address: String!
+    nonce: String!
+}
+
+type AuthUser implements Node {
+	id: ID!
+	address: String!
+    token: String!
+}
+
+input ValidateWalletCondition {
+    address: String!
+    signature: String!
+    nonce: String!
+}
+
+input ValidateWalletInput {
+    condition: ValidateWalletCondition!
+}
+
+input NonceAssignmentInput {
+	walletAddress: String!
+}
+
+extend type Query {
+	validateWallet(input: ValidateWalletInput!): AuthUser!
+}
+
+extend type Mutation {
+	nonceAssignment(input: NonceAssignmentInput!): User!
+}

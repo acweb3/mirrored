@@ -1,0 +1,9 @@
+query Bids($input: BidsInput!) {
+	bids(input: $input) {
+		edges {
+			node {
+				...activityBid
+			}
+		}
+	}
+}

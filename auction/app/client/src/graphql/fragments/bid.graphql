@@ -1,0 +1,24 @@
+fragment bid on Bid {
+	id
+	amount
+	paintingID
+	ownerAddress
+	timeStamp
+}
+
+fragment activityBid on Bid {
+	id
+	amount
+	paintingID
+	ownerAddress
+	timeStamp
+	isTopBid
+}
+
+fragment paintingBid on Bid {
+	id
+	amount
+	paintingID
+	ownerAddress
+	timeStamp
+}

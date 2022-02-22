@@ -1,0 +1,57 @@
+enum BidsOrderBy {
+	NATURAL
+	CREATED_ASC
+	CREATED_DESC
+	UPDATED_ASC
+	UPDATED_DESC
+	ALPHABETIC_ASC
+	ALPHABETIC_DESC
+}
+
+type Bid implements Node {
+	id: ID!
+	amount: Float!
+	paintingID: ID!
+	ownerAddress: String!
+	timeStamp: Time!
+	isTopBid: Boolean
+}
+
+type BidEdge implements Edge {
+	cursor: ID!
+	node: Bid!
+}
+
+type Bids implements Connection {
+	edges: [BidEdge!]
+	pageInfo: PageInfo!
+}
+
+input BidsCondition {
+	ownerAddress: String!
+}
+
+input BidAssignmentInput {
+	id: ID
+	amount: Float!
+	paintingID: ID!
+	ownerAddress: String!
+}
+
+input BidsInput {
+	arguments: PageArguments
+	orderBy: BidsOrderBy
+	condition: BidsCondition
+}
+
+extend type Subscription {
+  bidReceived: Bids
+}
+
+extend type Query {
+	bids(input: BidsInput!): Bids
+}
+
+extend type Mutation {
+	bidAssignment(input: BidAssignmentInput!): Bid!
+}

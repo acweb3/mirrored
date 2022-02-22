@@ -1,0 +1,9 @@
+subscription BidReceived {
+	bidReceived {
+		edges {
+			node {
+				...bid
+			}
+		}
+	}
+}

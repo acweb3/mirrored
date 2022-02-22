@@ -1,0 +1,12 @@
+fragment pageInfo on PageInfo {
+	hasNextPage
+	hasPreviousPage
+	startCursor
+	endCursor
+}
+
+fragment connPageInfo on Connection {
+	pageInfo {
+		...pageInfo
+	}
+}

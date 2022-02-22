@@ -1,0 +1,17 @@
+{
+	"name": "image-processing",
+	"version": "1.0.0",
+	"description": "",
+	"main": "index.js",
+	"scripts": {
+		"clear-images": "rm -rf images/dist/ && mkdir images/dist && touch images/dist/.placeholder",
+		"generate-images": "node index",
+		"start": "npm run clear-images && npm run generate-images"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"dependencies": {
+		"sharp": "^0.29.3"
+	}
+}
