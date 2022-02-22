@@ -2,11 +2,14 @@
 
 This monorepo contains the source code for the mint page, auction site, ERC721 contracts, and metadata processing for Cody Mayer's Mirrored Project.
 
+[Mint on etherscan](https://etherscan.io/address/0x1a2A90fc32E9bcC7c944Ed89F6383a10D2462692)
+[Auction on etherscan](https://etherscan.io/address/0x1e42afc104dcf49f8c0f62b63e8e2344e6dbfd93)
+
 ## Sections
 
 *Auction* — An auction site associated with the [MirroredCollab](https://github.com/acweb3/mirrored/blob/main/contract/contracts/MirroredCollab.sol) contract.  This site is a gasless, dutch auction style site for 20 collaboration pieces.
 
-*Mint* — A blind mint static site associated with the [Mirrored](https://github.com/acweb3/mirrored/blob/main/contract/contracts/Mirrored.sol) contract.
+*Mint* — A blind mint static site associated with the [Mirrored](https://github.com/acweb3/mirrored/blob/main/contract/contracts/Mirrored.sol) contract.  
 
 *Contract* — ERC721 contracts developed with Hardhat.  Tests written in chai.
 
