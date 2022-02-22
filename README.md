@@ -2,6 +2,8 @@
 
 This monorepo contains the source code for the mint page, auction site, ERC721 contracts, and metadata processing for Cody Mayer's Mirrored Project.
 
+[Mint site](https://mint.codymayer22.com) | [Auction site](https://auction.codymayer22.com)
+
 [Mint on etherscan](https://etherscan.io/address/0x1a2A90fc32E9bcC7c944Ed89F6383a10D2462692) | [Auction on etherscan](https://etherscan.io/address/0x1e42afc104dcf49f8c0f62b63e8e2344e6dbfd93)
 
 ## Sections
