@@ -5,16 +5,14 @@ const sharp = require("sharp");
 
 const asyncReaddir = promisify(fs.readdir);
 
-const PLACEHOLDER_NAME = ".placeholder";
-
 (async () => {
 	const rawImagesDir = join(__dirname, "images", "raw");
 	const fuzzyOutputDir = join(__dirname, "images", "fuzzy");
+	const hugeOutputDir = join(__dirname, "images", "huge");
+	const nftOutputDir = join(__dirname, "images", "chain");
 	const outputDir = join(__dirname, "images", "dist");
 
-	const files = (await asyncReaddir(rawImagesDir)).filter(
-		(file) => file !== PLACEHOLDER_NAME
-	);
+	const files = await asyncReaddir(rawImagesDir);
 
 	files.forEach(async (file, i) => {
 		const fileName = join(__dirname, "images", "raw", file);
@@ -23,11 +21,8 @@ const PLACEHOLDER_NAME = ".placeholder";
 			.resize({
 				width: 500,
 			})
-			.jpeg({
-				quality: 60,
-			})
-			.blur(30)
-			.toFile(join(fuzzyOutputDir, `reflection${i}.jpeg`));
+
+			.toFile(join(fuzzyOutputDir, `reflection${i}.webp`));
 	});
 
 	files.forEach(async (file, i) => {
@@ -37,10 +32,7 @@ const PLACEHOLDER_NAME = ".placeholder";
 			.resize({
 				width: 500,
 			})
-			.jpeg({
-				quality: 100,
-			})
-			.toFile(join(outputDir, `reflection${i}.jpeg`));
+			.toFile(join(outputDir, `reflection${i}.webp`));
 	});
 
 	files.forEach(async (file, i) => {
@@ -53,8 +45,10 @@ const PLACEHOLDER_NAME = ".placeholder";
 			// .jpeg({
 			// 	quality: 100,
 			// })
-			.toFile(join(outputDir, `reflection${i}.jpeg`));
+			.toFile(join(hugeOutputDir, `reflection${i}.jpeg`));
 	});
+
+	// files.forEach(file => fs.copyFileSync(`${rawImagesDir}/${file}`, nftOutputDir))
 
 	// const files = (await asyncReaddir(rawImagesDir))
 	// 	.filter((file) => file !== PLACEHOLDER_NAME)

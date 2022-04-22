@@ -7,7 +7,7 @@ const { TEMP_DIR_PLACEHOLDER } = require("./setImages");
 const asyncReaddir = promisify(fs.readdir);
 const asyncWriteFile = promisify(fs.writeFile);
 
-const IPFS_DIR = "ipfs://QmVJHeZKgXoYRJZuk29WYHy8c5mHFZwVfgNQF6Ag3U1i8M";
+const IPFS_DIR = "ipfs://QmV8sPeAmsMZGh6UgmFzt7usqLZ4krnSkRvFUMhiu8vgnC";
 
 /**
  * Set IPFS URL within metadata

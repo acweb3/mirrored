@@ -8,6 +8,7 @@ const asyncWriteFile = promisify(fs.writeFile);
 
 const TEMP_FILE_PLACEHOLDER = ".placeholder";
 const TEMP_DIR_PLACEHOLDER = "__TEMP__";
+const OFFSET = 100;
 
 /**
  * Remove spaces and set up metadata JSON object.
@@ -21,8 +22,9 @@ const TEMP_DIR_PLACEHOLDER = "__TEMP__";
         .filter((file) => file !== TEMP_FILE_PLACEHOLDER)
         .sort((a, b) => {
             const [indexA, indexB] = [a, b].map((fileName) => {
-                const [_reflection, indexExtension] = fileName.split(" ");
-                const [index] = indexExtension.split(".");
+                const [_reflection, indexExtension] = fileName.split(".");
+                const [_reflectionX, index] =
+                    indexExtension.split("reflection");
                 return index;
             });
 
@@ -30,25 +32,29 @@ const TEMP_DIR_PLACEHOLDER = "__TEMP__";
         });
 
     await Promise.all(
-        files.map(async (file, i) => {
-            const sanitizedJpgName = `Reflection #${i + 1}`;
+        files.map(async (file) => {
+            const [, n] = file.split("reflection");
+            const [actualN] = n.split(".jpeg");
+            const i = parseInt(actualN);
+            console.log();
+            console.log(`${file}: ${i}`);
+            const sanitizedJpgName = `reflection${i + 1 + OFFSET}`;
 
             await asyncCopyFile(
                 join(__dirname, "images", "raw", file),
-                `${imageOutdir}/${sanitizedJpgName}.jpg`
+                `${imageOutdir}/reflection${i + 1 + OFFSET}.jpg`
             );
 
             await asyncWriteFile(
                 `${metadataOutdir}/${i}`,
                 JSON.stringify(
                     {
-                        name: sanitizedJpgName,
-                        description: `Welcome to Mirrored, a world of never ending sunsets and sunrises to get lost in. Mint your own endless sky below and enjoy your stay 🤍 #${
-                            i + 1
-                        }/80`,
+                        name: `Reflection #${i + 1 + OFFSET}`,
+                        // prettier-ignore
+                        description: `Welcome to Mirrored, a world of never ending sunsets and to get lost in. Mint your own endless reflection below and enjoy your stay 🤍`,
                         attributes: [],
-                        image: `${TEMP_DIR_PLACEHOLDER}/Reflection%20%23${
-                            i + 1
+                        image: `${TEMP_DIR_PLACEHOLDER}/reflection${
+                            i + 1 + OFFSET
                         }.jpg`,
                     },
                     null,
