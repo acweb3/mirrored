@@ -1,5 +1,4 @@
 import styled, { css } from "styled-components";
-
 import { breakpoints } from "styles/breakpoints";
 import { shadows } from "styles/shadows";
 
@@ -87,8 +86,15 @@ export const BodyContent = styled.div`
 	flex: 0 0 66%;
 	padding: 90px 68px 45px;
 	background: white;
+	max-width: 100vw;
+
+	min-width: 100vw;
 
 	box-shadow: ${shadows.high};
+
+	${breakpoints.extraSmall`
+		min-width: auto;
+	`}
 
 	${breakpoints.large`
 		flex: 0 0 66.6667%;
@@ -99,7 +105,6 @@ export const BodyContent = styled.div`
 
 export const BodyContainer = styled.section`
 	margin-top: 180px;
-	margin-bottom: 180px;
 
 	width: 100%;
 	height: 100%;
@@ -108,4 +113,8 @@ export const BodyContainer = styled.section`
 	align-items: center;
 
 	position: relative;
+
+	${breakpoints.extraSmall`
+		margin-bottom: 180px;
+	`}
 `;

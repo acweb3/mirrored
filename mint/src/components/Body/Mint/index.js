@@ -52,14 +52,9 @@ export const Mint = () => {
 					<Button>Check secondary market</Button>
 				</a>
 			) : (
-				<Button
-					disabled
-					style={{
-						marginLeft: 16,
-					}}
-				>
-					Secondary Market Is Not Live
-				</Button>
+				<a target="#">
+					<Button disabled>Secondary Market Is Not Live</Button>
+				</a>
 			)}
 			{error && <S.Error>{JSON.stringify(error)}</S.Error>}
 		</S.Container>

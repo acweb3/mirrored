@@ -6,7 +6,7 @@ export const SiteWrapper = ({ children }) => {
 
 	return (
 		<>
-			{ethers.library?.network?.chainId !== 1 && (
+			{ethers.library?.network?.chainId === 4 && (
 				<S.TestNetBanner>
 					You are currently on a test network. Please change to
 					mainnet.

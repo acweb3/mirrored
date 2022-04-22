@@ -1,4 +1,5 @@
 import { ReactComponent as UnstyledEthereumIcon } from "../../../assets/icons/ethereum.svg";
+import { breakpoints } from "../../../styles/breakpoints";
 import styled from "styled-components";
 
 export const EthereumIcon = styled(UnstyledEthereumIcon)`
@@ -36,6 +37,11 @@ export const OpenSeaStatsLabel = styled.div`
 	line-height: 1.8em;
 	font-size: 14px;
 	color: #666;
+
+	text-align: center;
+	${breakpoints.extraSmall`
+		text-align: left;
+	`}
 `;
 
 export const OpenSeaStatsNumber = styled.div`

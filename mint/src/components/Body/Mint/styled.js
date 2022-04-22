@@ -18,10 +18,16 @@ export const Container = styled.div`
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	flex-direction: column;
+
+	${breakpoints.extraSmall`
+		flex-direction: row;
+	`}
 
 	& > a {
 		margin-top: 16px;
 	}
+
 	${breakpoints.medium`
 		& > a {
 			margin-top: 0;

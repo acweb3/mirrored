@@ -1,9 +1,15 @@
+import { breakpoints } from "../../../../styles/breakpoints";
 import styled from "styled-components";
 
 export const Asset = styled.div`
 	display: flex;
 
 	& > img {
+		width: 100%;
+		${breakpoints.extraSmall`
+			width: auto;
+		`}
+
 		border-radius: 4px;
 
 		${(props) => {
@@ -32,6 +38,12 @@ export const Column = styled.div`
 	display: flex;
 	flex-direction: column;
 
+	width: 200px;
+
+	${breakpoints.extraSmall`
+		width: auto;
+	`}
+
 	& > ${Asset} {
 		margin-bottom: 12px;
 
@@ -50,6 +62,7 @@ export const ImageGridContainer = styled.div`
 
 	/* height: 60%; */
 	overflow: hidden;
+	/* filter: blur(3px); */
 
 	perspective: 200px;
 
