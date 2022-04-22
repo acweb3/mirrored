@@ -16,7 +16,7 @@ export const CloseIcon = styled(UnstyledCloseIcon)`
 export const EthereumIcon = styled(UnstyledEthereumIcon)`
 	height: 16px;
 	margin-bottom: 2px;
-	margin-left: 3px;
+	margin-left: 8px;
 `;
 
 export const Button = styled(UnstyledButton)`
