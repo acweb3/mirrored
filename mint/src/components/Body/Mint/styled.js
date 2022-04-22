@@ -1,5 +1,5 @@
-import styled from "styled-components";
 import { ThreeDots } from "react-loading-icons";
+import styled from "styled-components";
 import { breakpoints } from "styles/breakpoints";
 
 export const Loader = styled(ThreeDots)`
@@ -15,6 +15,10 @@ export const Error = styled.span`
 `;
 
 export const Container = styled.div`
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
 	& > a {
 		margin-top: 16px;
 	}

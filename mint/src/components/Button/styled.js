@@ -1,5 +1,5 @@
-import styled from "styled-components";
 import { breakpoints } from "../../styles/breakpoints";
+import styled from "styled-components";
 
 export const ButtonContainer = styled.button`
 	font-family: brandon-grotesque;
@@ -27,11 +27,15 @@ export const ButtonContainer = styled.button`
 
 	transition: 0.1s opacity linear;
 
-	&:disabled,
 	&:active,
 	&:focus,
 	&:hover {
 		opacity: 0.8;
+	}
+
+	&:disabled {
+		opacity: 0.2;
+		font-style: italic;
 	}
 
 	${breakpoints.medium`

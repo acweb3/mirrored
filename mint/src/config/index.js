@@ -8,5 +8,16 @@ const requiredEnvVar = (envVar) => {
 
 export const config = {
 	flagshipURL: requiredEnvVar(process.env.REACT_APP_FLAGSHIP_URL),
-	contractId: requiredEnvVar(process.env.REACT_APP_CONTRACT_ID),
+	rinkebyAlchemyUrl: requiredEnvVar(
+		process.env.REACT_APP_RINKEBY_ALCHEMY_URL
+	),
+	mainnetAlchemyUrl: requiredEnvVar(
+		process.env.REACT_APP_MAINNET_ALCHEMY_URL
+	),
+	rinkebyContractAddress: requiredEnvVar(
+		process.env.REACT_APP_RINKEBY_CONTRACT_ADDRESS
+	),
+	mainnetContractAddress: requiredEnvVar(
+		process.env.REACT_APP_MAINNET_CONTRACT_ADDRESS
+	),
 };

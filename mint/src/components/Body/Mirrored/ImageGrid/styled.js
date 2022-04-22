@@ -1,4 +1,4 @@
-import styled, { css } from "styled-components";
+import styled from "styled-components";
 
 export const Asset = styled.div`
 	display: flex;
@@ -44,29 +44,14 @@ export const Column = styled.div`
 export const ImageGridContainer = styled.div`
 	display: flex;
 	justify-content: center;
+	transform: translateZ(-200px) scale(1.5);
+
 	/* align-items: center; */
 
 	/* height: 60%; */
 	overflow: hidden;
 
-	/* filter: blur(0.8px); */
-
-	${(props) => {
-		return (
-			props.isFlipped &&
-			css`
-				/* filter: blur(2px); */
-				margin-top: -960px;
-				transform-origin: 50% 100%;
-				transform: perspective(600px) rotateX(10deg) rotateZ(180deg)
-					rotateY(180deg);
-
-				& > ${Asset} {
-					transform: rotateY(180deg);
-				}
-			`
-		);
-	}}
+	perspective: 200px;
 
 	& > ${Column} {
 		margin-right: 12px;

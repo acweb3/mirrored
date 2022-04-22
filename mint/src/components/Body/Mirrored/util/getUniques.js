@@ -1,8 +1,8 @@
 export const pullImage = async (index) =>
-	(await import(`assets/images/reflections/reflection${index}.jpeg`)).default;
+	(await import(`assets/images/reflections/reflection${index}.webp`)).default;
 
 // Arbitrary number, basically.
-const IMAGES_LENGTH = 76;
+const IMAGES_LENGTH = 74;
 const ROWS = 5;
 const COLUMNS = 4;
 

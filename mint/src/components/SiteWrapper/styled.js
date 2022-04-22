@@ -49,4 +49,5 @@ export const TestNetBanner = styled.div`
 	align-items: center;
 	font-size: 1.2rem;
 	width: 100vw;
+	z-index: 9999;
 `;
