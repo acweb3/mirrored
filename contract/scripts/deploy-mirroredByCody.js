@@ -18,12 +18,9 @@ async function main() {
 	});
 
 	const mirroredByCody = await MirroredByCody.deploy(config.ipfsURL);
-
-	console.log(mirroredByCody);
-
 	await mirroredByCody.deployed();
 
-	console.log("test deployed to:", test.address);
+	console.log("mirroredByCody deployed to:", mirroredByCody.address);
 }
 
 main()
